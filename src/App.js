@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Clascomp from './components/Clascomp';
+import Funcomp from './components/Funcomp';
+
+import './style.css';
 
 function App() {
+  const [FnData , setData]=useState()
+  const [cData,setData2]=useState()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <h1>Styling using Functional and Class component</h1>
+      <br/><br/><br/>
+<button className='func'  onClick={()=>setData(true)}>To see styling in Functional Component</button>
+<button className='clas' onClick={()=>setData2(true)} >To see styling in Class Component</button>
+
+{FnData&&<Funcomp/>}
+{cData&&<Clascomp/>}
+
     </div>
   );
 }
